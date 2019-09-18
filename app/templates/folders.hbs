@@ -1,11 +1,4 @@
 {{#each model as |folder|}}
-  <h3>{{folder.name}}</h3>
-  <ul>
-    {{#each folder.files as |file|}}
-      <li>{{file.name}}</li>
-    {{/each}}
-  </ul>
-
-
+  {{expandable-folder folder=folder}}
 {{/each}}
 {{outlet}}

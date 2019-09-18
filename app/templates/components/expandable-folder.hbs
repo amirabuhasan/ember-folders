@@ -1,0 +1,9 @@
+{{yield}}
+  <h3 onclick={{if folder.files.length (action "toggleOpen")}}>{{if isOpen '-' '+'}} {{folder.name}}</h3>
+  {{#if isOpen}}
+    <ul>
+        {{#each folder.files as |file|}}
+            <li>{{file.name}}</li>
+        {{/each}}
+    </ul>
+  {{/if}}
