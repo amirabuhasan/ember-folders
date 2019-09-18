@@ -1,7 +1,8 @@
 import DS from 'ember-data';
-const { Model } = DS;
+
+const { hasMany, Model, attr } = DS;
 
 export default Model.extend({
-  name: DS.attr('string'),
-  files: DS.attr()
+  name: attr('string'),
+  files: hasMany('file')
 });

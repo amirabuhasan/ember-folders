@@ -1,6 +1,11 @@
 {{#each model as |folder|}}
-  {{#link-to 'folders.folder' folder.id}}
-    {{folder.name}}
-  {{/link-to}}
+  <h3>{{folder.name}}</h3>
+  <ul>
+    {{#each folder.files as |file|}}
+      <li>{{file.name}}</li>
+    {{/each}}
+  </ul>
+
+
 {{/each}}
 {{outlet}}
