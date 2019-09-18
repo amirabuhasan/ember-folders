@@ -1,4 +1,7 @@
-{{#each model as |folder|}}
+{{#each rootFolders as |folder|}}
+  {{log folder.parent}}
   {{expandable-folder folder=folder}}
 {{/each}}
+
+
 {{outlet}}

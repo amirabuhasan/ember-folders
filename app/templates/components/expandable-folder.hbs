@@ -1,9 +1,11 @@
 {{yield}}
-  <h3 onclick={{if folder.files.length (action "toggleOpen")}}>{{if isOpen '-' '+'}} {{folder.name}}</h3>
-  {{#if isOpen}}
-    <ul>
-        {{#each folder.files as |file|}}
-            <li>{{file.name}}</li>
-        {{/each}}
-    </ul>
-  {{/if}}
+<h3 onclick={{if folder.files.length (action "toggleOpen")}}>{{if isOpen '-' '+'}} {{folder.name}}</h3>
+
+{{#if isOpen}}
+  {{#each folder.folders as |folder|}}
+    {{expandable-folder folder=folder}}
+  {{/each}}
+  {{#each folder.files as |file|}}
+      <li>{{file.name}}</li>
+  {{/each}}
+{{/if}}
