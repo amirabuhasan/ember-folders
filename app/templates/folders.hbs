@@ -1,0 +1,6 @@
+{{#each model as |folder|}}
+  {{#link-to 'folders.folder' folder.id}}
+    {{folder.name}}
+  {{/link-to}}
+{{/each}}
+{{outlet}}
